@@ -1,16 +1,30 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        /*int[] arr1 = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};*/
+        int[] arr1 = {1,2,3,4,5,6,7,8,9,10};
+        int keeper = 0, counter = 0;
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        for (int k = 10; 1 < k; k--) {
+            counter++;
+
+            for (int j = 1; j < k; j++) {
+
+                if(arr1[j - 1] < arr1[j]){
+                    continue;
+                }
+                else if (arr1[j - 1] > arr1[j]) {
+                    keeper = arr1[j];
+                    arr1[j] = arr1[j - 1];
+                    arr1[j - 1] = keeper;
+                    counter++;
+                }
+                counter++;
+            }
         }
+
+            System.out.print(Arrays.toString(arr1) + "\nNumber of Actions: " + counter);
     }
 }
