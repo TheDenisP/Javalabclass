@@ -3,28 +3,19 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        /*int[] arr1 = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};*/
-        int[] arr1 = {1,2,3,4,5,6,7,8,9,10};
-        int keeper = 0, counter = 0;
+        Animal[] animals = new Animal[4];
 
-        for (int k = 10; 1 < k; k--) {
-            counter++;
+        animals[0] = new Dog("Buddy", 3, 15.5, true, true);
+        animals[1] = new Blowfish("Bluey", 1, 0.2, false, true);
+        animals[2] = new Pigeon("Pidgey", 2, 0.5, "white", "Spain");
+        animals[3] = new Mammal("Morsley", 20, 2.5, true);
 
-            for (int j = 1; j < k; j++) {
-
-                if(arr1[j - 1] < arr1[j]){
-                    continue;
-                }
-                else if (arr1[j - 1] > arr1[j]) {
-                    keeper = arr1[j];
-                    arr1[j] = arr1[j - 1];
-                    arr1[j - 1] = keeper;
-                    counter++;
-                }
-                counter++;
-            }
+        for (Animal a : animals) {
+            System.out.println(a);
         }
 
-            System.out.print(Arrays.toString(arr1) + "\nNumber of Actions: " + counter);
+
+
+
     }
 }
